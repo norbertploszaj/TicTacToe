@@ -23,21 +23,4 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # Kluczowa zmiana: pakiety w JEDNEJ LINII
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-        with:
-          cmdline-tools-version: 11076708
-          packages: 'platforms;android-34 build-tools;34.0.4 platform-tools'
-
-      - name: Build debug APK
-        uses: gradle/gradle-build-action@v3
-        with:
-          gradle-version: 8.7
-          arguments: :app:assembleDebug
-
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+      # API 35 + naj
